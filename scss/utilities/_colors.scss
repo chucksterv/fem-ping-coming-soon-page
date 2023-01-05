@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+//Creates a utility class for all text and background colors in the color map.
+@each $category, $category-map in $colors {
+  @each $variant, $value in $category-map {
+    .clr-#{$category}-#{$variant} {
+      color: $value;
+    }
+    .bg-#{$category}-#{$variant} {
+      background-color: $value;
+    }
+  }
+}

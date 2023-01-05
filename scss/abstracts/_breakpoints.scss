@@ -1,0 +1,8 @@
+//Imported for rem/em conversions from px values within the breakpoints
+@use "functions" as *;
+
+$breakpoints: (
+  sm: 35em,
+  md: em(600px),
+  lg: em(1440px),
+);

@@ -1,0 +1,34 @@
+@use "sass:math";
+@use "sass:map";
+@use "colors" as *;
+
+/*
+  The following two functions are used to convert pixel values to rem and em values.
+  Only intended to be used in instances where designs call for very specific px values that are non-standard.
+  Please use rem and em values by default where possible without using this as a conversion tool.
+*/
+//Converts px to rem
+@function rem($pxValue) {
+  @if math.unit($pxValue) == px {
+    @return #{math.div($pxValue, 16px)}rem;
+  } @else {
+    @error "Please enter a pixel value";
+  }
+}
+//Converts px to em
+@function em($pxValue) {
+  @if math.unit($pxValue) == px {
+    @return #{math.div($pxValue, 16px)}em;
+  } @else {
+    @error "Please enter a pixel value";
+  }
+}
+
+//Returns a color from the colors map
+@function clr($category, $variant) {
+  @if map.has-key($colors, $category, $variant) {
+    @return map.get($colors, $category, $variant);
+  } @else {
+    @error '$colors does not have that color!';
+  }
+}

@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "breakpoints" as *;
+@use "functions" as *;
+
+/*
+  Generates a media query according to either a breakpoint or a numerical unit.
+  Checks the breakpoints map.
+  Checks if the numerical value has a valid unit attached to it.
+  Converts all px values entered to em values.
+*/
+@mixin mq($size) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.unit($size) == px {
+      @media screen and (min-width: em($size)) {
+        @content;
+      }
+    } @else if math.is-unitless($size) {
+      @error "Please enter a unit along with the number";
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Not a valid input. Either choose a keyword or a numerical unit.";
+  }
+}
