@@ -22,28 +22,50 @@
     />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/27d76efc87.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main>
-      <img src="images/logo.svg" alt="Logo" />
+      <img src="images/logo.svg" alt="Logo" class="logo" />
       <h1>We are launching <b>soon!</b></h1>
       <p>Subscribe and get notified</p>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Your email address.."
+      <form action="#" id="email-form" novalidate>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Your email address.."
+        />
+        <p class="email-error"></p>
+        <button type="submit" id="email-button">Notify Me</button>
+      </form>
+
+      <img
+        src="images/illustration-dashboard.png"
+        alt="dashboard mockup"
+        class="dashboard-img"
       />
-      <p class="email-error"></p>
-      <button id="email-button">Notify Me</button>
-      <img src="images/illustration-dashboard.png" alt="" />
     </main>
 
     <footer>
       <ul class="social-icons">
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
       </ul>
       <p class="copyrights">&copy; Copyright Ping. All rights reserved.</p>
     </footer>

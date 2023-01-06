@@ -90,6 +90,100 @@ select {
   Checks if the numerical value has a valid unit attached to it.
   Converts all px values entered to em values.
 */
+body {
+  color: hsl(209deg, 33%, 12%);
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-family: "Libre Franklin", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: hsl(0deg, 0%, 59%);
+  font-weight: 300;
+}
+h1 b {
+  color: hsl(209deg, 33%, 12%);
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  gap: 2rem;
+  margin: 4rem auto 4rem;
+  width: min(100% - 3rem, 600px);
+}
+main .logo {
+  margin-inline: auto;
+  width: 18%;
+}
+main form {
+  display: grid;
+}
+@media screen and (min-width: 89.9375em) {
+  main form {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+main p.email-error {
+  color: hsl(354deg, 100%, 66%);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+footer {
+  color: hsl(0deg, 0%, 59%);
+}
+footer ul {
+  display: flex;
+  gap: 2rem;
+  place-content: center;
+}
+footer ul a {
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 0.5rem;
+  border: 1px solid hsl(223deg, 87%, 63%);
+  color: hsl(223deg, 87%, 63%);
+  transition: 150ms color ease-in-out;
+}
+footer ul a:is(:hover, :focus) {
+  color: hsl(223deg, 100%, 78%);
+}
+
+button {
+  width: 90%;
+  margin-inline: auto;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 600;
+  background-color: hsl(223deg, 87%, 63%);
+  border-radius: 5rem;
+  border: none;
+  padding: 1.5rem;
+  transition: 150ms background-color ease-in-out;
+}
+button:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: hsl(223deg, 100%, 78%);
+}
+
+input {
+  width: 90%;
+  margin-inline: auto;
+  color: hsl(223deg, 100%, 88%);
+  border: 2px solid hsl(223deg, 100%, 88%);
+  border-radius: 5rem;
+  padding: 1.5rem;
+}
+
+.input-error {
+  border: 2px solid hsl(354deg, 100%, 66%);
+}
+
 .clr-primary-blue {
   color: hsl(223deg, 87%, 63%);
 }
@@ -104,6 +198,14 @@ select {
 
 .bg-accent-blue {
   background-color: hsl(223deg, 100%, 88%);
+}
+
+.clr-accent-blue-500 {
+  color: hsl(223deg, 100%, 78%);
+}
+
+.bg-accent-blue-500 {
+  background-color: hsl(223deg, 100%, 78%);
 }
 
 .clr-accent-red {

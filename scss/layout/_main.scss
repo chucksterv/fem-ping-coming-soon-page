@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+main {
+  display: grid;
+  gap: 2rem;
+  margin: 4rem auto 4rem;
+  width: min(100% - 3rem, 600px);
+
+  .logo {
+    margin-inline: auto;
+    width: 18%;
+  }
+
+  form {
+    display: grid;
+    @include mq(lg) {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+
+  p.email-error {
+    color: clr(accent, "red");
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: none;
+  }
+}

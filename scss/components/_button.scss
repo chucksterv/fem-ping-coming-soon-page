@@ -1,1 +1,19 @@
 @use "../abstracts/" as *;
+
+button {
+  width: 90%;
+  margin-inline: auto;
+  color: clr(neutral, 100);
+  font-weight: $fw-600;
+
+  background-color: clr(primary, "blue");
+  border-radius: 5rem;
+  border: none;
+  padding: 1.5rem;
+  transition: 150ms background-color ease-in-out;
+
+  &:is(:hover, :focus) {
+    cursor: pointer;
+    background-color: clr(accent, "blue-500");
+  }
+}

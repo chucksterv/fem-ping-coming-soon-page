@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+input {
+  width: 90%;
+  margin-inline: auto;
+  color: clr(accent, "blue");
+  border: 2px solid clr(accent, "blue");
+  border-radius: 5rem;
+  padding: 1.5rem;
+}
+
+.input-error {
+  border: 2px solid clr(accent, "red");
+}
